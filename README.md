@@ -28,6 +28,10 @@ The button to add a task is not implemented. We created the _AddTaskClickListene
 
 *Implement the listener* that the user can input the required information to add a new task to the task list. Once the task is added, the model should be updated and the UI refreshed accordingly.
 
+Complementary question : be careful to not add invalid task names : 
+- no empty task
+- tasks should be alpha-numerical with spaces.
+
 #### Implement the function to remove a task
 
 The button to remove a task is not implemented. We created the _RemoveTaskClickListener_ that is invoked when we click on the button, but it does nothing.
