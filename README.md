@@ -20,9 +20,9 @@ We have three buttons that enables the user to add a task, remove a task and mar
 
 The implementation is not finished, and the goal of this exercise is to implement the missing features.
 
-### Missing features to be implemented
+## Missing features to be implemented
 
-#### Implement the function to add a new task
+### Implement the function to add a new task
 
 The button to add a task is not implemented. We created the _AddTaskClickListener_ listener that is invoked when we click on the button, but it does nothing.
 
@@ -32,19 +32,19 @@ Complementary question : be careful to not add invalid task names :
 - no empty task
 - tasks should be alpha-numerical with spaces.
 
-#### Implement the function to remove a task
+### Implement the function to remove a task
 
 The button to remove a task is not implemented. We created the _RemoveTaskClickListener_ that is invoked when we click on the button, but it does nothing.
 
 To remove a task, the _Task_ object must be removed from the model, the model refreshed, and the UI refreshed accordingly.
 
-#### Implement the function to mark the task as completed
+### Implement the function to mark the task as completed
 
 The button to marks the task as completed is not implemented. We created the _markTaskCompletedClickListener_ listener that is invoked when we click on the button, but it does nothing.
 
 To mark a task, the status of the _Task_ object must be updated, the model refreshed, and the UI refreshed accordingly.
 
-#### Complementary question
+### Complementary question
 
 We would like to render differently tasks that are completed from opened tasks ( for example a different background color).
 
