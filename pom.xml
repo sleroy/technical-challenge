@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.romankh3</groupId>
-    <artifactId>maven-template-repository</artifactId>
+    <groupId>com.github.sleroy</groupId>
+    <artifactId>maven-java-technical-challenge</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Maven Repository Template</name>
+    <name>Maven and Java technical challenge</name>
 
-    <url>https://github.com/template-repository/maven-template-repository</url>
+    <url>https://github.com/sleroy/technical-challenge</url>
 
     <licenses>
         <license>
@@ -23,12 +23,13 @@
     <properties>
         <mockito.version>2.26.0</mockito.version>
         <junit.version>5.5.2</junit.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javadoc.plugin.version>3.1.1</javadoc.plugin.version>
         <source.plugin.version>3.2.0</source.plugin.version>
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <miglayout.version>3.7.4</miglayout.version>
+        <swing-layout.version>1.0.3</swing-layout.version>
     </properties>
 
     <dependencies>
@@ -50,10 +51,31 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.miglayout</groupId>
+            <artifactId>miglayout</artifactId>
+            <version>${miglayout.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.swinglabs</groupId>
+            <artifactId>swing-layout</artifactId>
+            <version>${swing-layout.version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <release>11</release>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -71,7 +93,23 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.plugin.version}</version>
+                <configuration>
+                    <argLine>
+                        --illegal-access=permit
+                    </argLine>
+                </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${surefire.plugin.version}</version>
+                <configuration>
+                    <argLine>
+                        --illegal-access=permit
+                    </argLine>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
